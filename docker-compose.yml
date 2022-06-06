@@ -1,0 +1,23 @@
+version: "3.3"
+
+volumes:
+  postgres-smartWarehouse-data:
+
+services:
+  smartWarehouse-db:
+    image: postgres:11-alpine
+    container_name: smartWarehouse_db
+    environment:
+      - POSTGRES_DB=smartWarehouse_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+    volumes:
+      - postgres-smartWarehouse-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+    networks:
+      - smartWarehouse-net
+networks:
+  smartWarehouse-net:

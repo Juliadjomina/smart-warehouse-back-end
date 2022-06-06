@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "endpoinendpoints.cors.allow-credentials",
+      "type": "java.lang.String",
+      "description": "Description for endpoinendpoints.cors.allow-credentials."
+  }
+] }
