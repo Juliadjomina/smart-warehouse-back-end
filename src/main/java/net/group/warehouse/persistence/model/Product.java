@@ -22,8 +22,8 @@ public class Product {
     @Size(max = 50)
     private String name;
     @Size(max = 50)
-    private String serialnumber;
-    private LocalDateTime dateofpurchase;
+    private String serialNumber;
+    private LocalDateTime dateOfPurchase;
     private float length;
     private float width;
     private float depth;

@@ -9,8 +9,8 @@ public class ProductRequest {
 
     private Long id;
     private String name;
-    private String serialnumber;
-    private LocalDateTime dateofpurchase;
+    private String serialNumber;
+    private LocalDateTime dateOfPurchase;
     private float length;
     private float width;
     private float depth;

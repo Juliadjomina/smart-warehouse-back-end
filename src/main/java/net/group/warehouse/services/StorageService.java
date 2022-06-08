@@ -67,8 +67,8 @@ public class StorageService {
             ProductResponse productResponse = new ProductResponse();
             productResponse.setId(product.getId());
             productResponse.setName(product.getName());
-            productResponse.setSerialnumber(product.getSerialnumber());
-            productResponse.setDateofpurchase(product.getDateofpurchase());
+            productResponse.setSerialnumber(product.getSerialNumber());
+            productResponse.setDateofpurchase(product.getDateOfPurchase());
             productResponse.setLength(product.getLength());
             productResponse.setWidth(product.getWidth());
             productResponse.setDepth(product.getDepth());

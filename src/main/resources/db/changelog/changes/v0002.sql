@@ -3,18 +3,6 @@ values ('Karp',
         5);
 
 insert into storage(name, capacity)
-values ('Tuba',
-        15);
-
-insert into storage(name, capacity)
-values ('Karp',
-        19);
-
-insert into storage(name, capacity)
-values ('Sahtel',
-        12);
-
-insert into storage(name, capacity)
 values ('Kast',
         8);
 

@@ -26,8 +26,8 @@ public class ProductService {
             ProductResponse productResponse = new ProductResponse();
             productResponse.setId(product.getId());
             productResponse.setName(product.getName());
-            productResponse.setSerialnumber(product.getSerialnumber());
-            productResponse.setDateofpurchase(product.getDateofpurchase());
+            productResponse.setSerialnumber(product.getSerialNumber());
+            productResponse.setDateofpurchase(product.getDateOfPurchase());
             productResponse.setLength(product.getLength());
             productResponse.setWidth(product.getWidth());
             productResponse.setDepth(product.getDepth());
@@ -45,8 +45,8 @@ public class ProductService {
         if (product != null) {
             productResponse.setId(product.getId());
             productResponse.setName(product.getName());
-            productResponse.setSerialnumber(product.getSerialnumber());
-            productResponse.setDateofpurchase(product.getDateofpurchase());
+            productResponse.setSerialnumber(product.getSerialNumber());
+            productResponse.setDateofpurchase(product.getDateOfPurchase());
             productResponse.setLength(product.getLength());
             productResponse.setWidth(product.getWidth());
             productResponse.setDepth(product.getDepth());
@@ -64,12 +64,13 @@ public class ProductService {
         Product product = new Product();
         product.setId(productRequest.getId());
         product.setName(productRequest.getName());
-        product.setSerialnumber(productRequest.getSerialnumber());
-        product.setDateofpurchase(productRequest.getDateofpurchase());
+        product.setSerialNumber(productRequest.getSerialNumber());
+        product.setDateOfPurchase(productRequest.getDateOfPurchase());
         product.setLength(productRequest.getLength());
         product.setWidth(productRequest.getWidth());
         product.setDepth(productRequest.getDepth());
         product.setStorageId(productRequest.getStorageId());
+        product.setMaterial(productRequest.getMaterial());
         Product save = repository.save(product);
         return save.getId();
     }
