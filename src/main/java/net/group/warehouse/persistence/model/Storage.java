@@ -23,5 +23,5 @@ public class Storage {
     @Size(max = 50)
     private String name;
     @NotNull
-    private int capacity;
+    private Integer capacity;
 }

@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 public class ProductResponse {
     private Long id;
     private String name;
-    private String serialnumber;
-    private LocalDateTime dateofpurchase;
+    private String serialNumber;
+    private LocalDateTime dateOfPurchase;
     private float length;
     private float width;
     private float depth;

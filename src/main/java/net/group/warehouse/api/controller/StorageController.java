@@ -3,7 +3,7 @@ package net.group.warehouse.api.controller;
 import net.group.warehouse.api.request.StorageRequest;
 import net.group.warehouse.api.respone.ProductResponse;
 import net.group.warehouse.api.respone.StorageResponse;
-import net.group.warehouse.services.StorageService;
+import net.group.warehouse.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

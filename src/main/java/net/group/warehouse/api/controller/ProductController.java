@@ -2,7 +2,7 @@ package net.group.warehouse.api.controller;
 
 import net.group.warehouse.api.request.ProductRequest;
 import net.group.warehouse.api.respone.ProductResponse;
-import net.group.warehouse.services.ProductService;
+import net.group.warehouse.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
