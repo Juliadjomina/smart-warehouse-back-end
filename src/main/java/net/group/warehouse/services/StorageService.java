@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class StorageService {
@@ -24,15 +25,13 @@ public class StorageService {
 
     public List<StorageResponse> getAll() {
         List<Storage> storages = repository.findAll();
-        List<StorageResponse> storageResponses = new ArrayList<>();
-        for (Storage storage : storages) {
+        return storages.stream().map(storage -> {
             StorageResponse storageResponse = new StorageResponse();
             storageResponse.setId(storage.getId());
             storageResponse.setName(storage.getName());
             storageResponse.setCapacity(storage.getCapacity());
-            storageResponses.add(storageResponse);
-        }
-        return storageResponses;
+            return storageResponse;
+        }).collect(Collectors.toList());
     }
 
 
@@ -62,8 +61,7 @@ public class StorageService {
 
     public List<ProductResponse> getStorageProducts(StorageResponse storage) {
         List<Product> products = repository.getStorageProducts(storage.getId());
-        List<ProductResponse> productResponses = new ArrayList<>();
-        for (Product product : products) {
+        return products.stream().map(product -> {
             ProductResponse productResponse = new ProductResponse();
             productResponse.setId(product.getId());
             productResponse.setName(product.getName());
@@ -74,8 +72,7 @@ public class StorageService {
             productResponse.setDepth(product.getDepth());
             productResponse.setMaterial(product.getMaterial());
             productResponse.setStorageId(product.getStorageId());
-            productResponses.add(productResponse);
-        }
-        return productResponses;
+            return productResponse;
+        }).collect(Collectors.toList());
     }
 }

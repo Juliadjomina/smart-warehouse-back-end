@@ -7,8 +7,8 @@ import net.group.warehouse.persistence.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
@@ -21,8 +21,7 @@ public class ProductService {
 
     public List<ProductResponse> getAllProducts() {
         List<Product> products = repository.findAll();
-        List<ProductResponse> productResponses = new ArrayList<>();
-        for (Product product : products) {
+        return products.stream().map(product-> {
             ProductResponse productResponse = new ProductResponse();
             productResponse.setId(product.getId());
             productResponse.setName(product.getName());
@@ -33,11 +32,10 @@ public class ProductService {
             productResponse.setDepth(product.getDepth());
             productResponse.setMaterial(product.getMaterial());
             productResponse.setStorageId(product.getStorageId());
-            productResponses.add(productResponse);
-
-        }
-        return productResponses;
+            return productResponse;
+        }).collect(Collectors.toList());
     }
+
 
     public ProductResponse getTheProductById(Long id) {
         Product product = repository.findById(id).orElse(null);
