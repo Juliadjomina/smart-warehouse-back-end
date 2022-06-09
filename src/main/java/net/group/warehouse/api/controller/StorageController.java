@@ -42,7 +42,7 @@ public class StorageController {
         return service.getStorageProducts(storage);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("{id}")
     private void deleteStorage(@PathVariable("id") Long id) {
         service.deleteById(id);
     }

@@ -35,7 +35,7 @@ public class ProductController {
         return service.saveProduct(productRequest);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("{id}")
     private void deleteProduct(@PathVariable("id") Long id) {
         service.deleteProduct(id);
     }
